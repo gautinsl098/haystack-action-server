@@ -19,6 +19,8 @@ intents:
     use_entities: true
 - bot_challenge:
     use_entities: true
+- haystack_call:
+    use_entities: true
 entities: []
 slots: {}
 responses:
@@ -35,6 +37,7 @@ responses:
   - text: Bye
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
-actions: []
+actions:
+  - action_haystack
 forms: {}
 e2e_actions: []
