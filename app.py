@@ -1,8 +1,11 @@
-from fastapi import FastAPI
+from flask import Flask,request, jsonify
 
-app = FastAPI()
+app = Flask(__name__)
 
+@app.route("/webhook", methods=['POST'])
+def index():
+    print(request.get_json())
+    return "received from RASA server"
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+if __name__ == "__main__":
+    app.run(debug=True)
